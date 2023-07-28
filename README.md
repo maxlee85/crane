@@ -12,10 +12,13 @@ teacher_classroom_date_ranges -> teacher_classroom_groups -> teacher_classrooms
 
 # teacher_classroom_date_ranges
 1. There have been multiple data ingestion tools used in the past leading inconsistent values across date columns and duplicate rows being generated.
-
 2. mysql_ebdb_tables.people_teacher_classrooms_history, a row is inserted into this table/updated everytime a teacher's relationship with a classroom changes. _fivetran_deleted represents a hard delete while datetime_archived would be a soft delete.
-3. asdf
-4. asdf
+`
+asdf
+`
+4. In the inferred_dates cte I am grabbing all potential date columns and generating an inferred created timestamp.
+5. asdf
+6. asdf
 
 # teacher_classroom_groups
 
