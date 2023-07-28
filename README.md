@@ -23,8 +23,8 @@ A basic recreation of the table
 | 1       | a            | 2022-01-15   | 2022-06-01       | true              |
 
 4. In the inferred_dates cte I am grabbing all potential date columns and generating an inferred created timestamp.
-5. asdf
-6. asdf
+5. In the classroom_dates cte I am creating an end date and ordering the rows into a inferred chronological order.
+6. Finally the query uses window functions to grab the delete and start and end dates of the previous row as well as filtering out rows of impossible or bad data.
 
 # teacher_classroom_groups
 
