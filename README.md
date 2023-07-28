@@ -26,6 +26,13 @@ A basic recreation of the table
 5. In the classroom_dates cte I am creating an end date and ordering the rows into a inferred chronological order.
 6. Finally the query uses window functions to grab the delete and start and end dates of the previous row as well as filtering out rows of impossible or bad data.
 
+| user_id | classroom_id | teacher_classroom_start_date | teacher_classroom_end_date | is_deleted | is_previous_row_deleted | previous_teacher_classroom_start_date | previous_teacher_classroom_end_date |
+|---------|--------------|------------------------------|----------------------------|------------|-------------------------|---------------------------------------|-------------------------------------|
+| 1       | a            | 2022-01-01                   |                            |            | false                   |                                       |                                     |
+| 1       | a            | 2022-01-01                   | 2022-01-02                 | true       | false                   | 2022-01-01                            |                                     |
+| 1       | a            | 2022-01-01                   |                            |            | true                    | 2022-01-01                            | 2022-01-02                          |
+| 1       | a            | 2022-01-01                   | 2022-06-01                 | true       | false                   | 2022-01-01                            |                                     |
+
 # teacher_classroom_groups
 
 # teacher_classrooms
