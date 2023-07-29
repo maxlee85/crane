@@ -34,7 +34,7 @@ A basic recreation of the table:
 
 5. In the inferred_dates cte I am grabbing all potential date columns and generating an inferred created timestamp.
 6. In the classroom_dates cte I am creating an end date and ordering the rows into a inferred chronological order.
-7. Finally the query uses window functions to grab the delete and start and end dates of the previous row as well as filtering out rows of impossible or bad data.
+7. Finally the query uses window functions to grab the delete and start and end dates of the previous row for down stream comparison and removes rows of impossible or bad data.
 
 | user_id | classroom_id | teacher_classroom_start_date | teacher_classroom_end_date | is_deleted | is_previous_row_deleted | previous_teacher_classroom_start_date | previous_teacher_classroom_end_date |
 |---------|--------------|------------------------------|----------------------------|------------|-------------------------|---------------------------------------|-------------------------------------|
