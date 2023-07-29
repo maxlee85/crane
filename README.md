@@ -9,9 +9,9 @@ The purpose of this project was to create a table that provided the entire histo
 | 1       | a            | 2021-08-01           | 2023-08-01         |
 
 # Approach
-The problem is a variation of the gaps and islands question so that is the approach used.
+The problem is a variation of the gaps and islands so that is the approach used.
 
-There are 3 staging tables used, which each subsequent staging table depending on the prior.
+There are 3 staging tables used, with each subsequent staging table depending on the prior.
 
 teacher_classroom_date_ranges -> teacher_classroom_groups -> teacher_classrooms
 
