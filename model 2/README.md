@@ -1,8 +1,5 @@
 # Background
-
-The tables shown demonstrate the use of recursion to build hierarchies of content.
-
-Within the application content can be an article or a collection. A collection can contain any number of articles or other collections.
+Within our application content can be an article or a collection. A collection can contain any number of articles or other collections.
 
 For example
 ```
@@ -19,4 +16,8 @@ social studies collection
 │   |       └──article 10
 ```
 
-The final table can be used to report on engagement on multiple collections that a piece of content might belong to.
+The purpose of this project was to find for a piece of content, determine what collections that content belongs to to measure engagement across collections.
+
+# Approach
+
+Since there are not a fixed number of levels a piece of content can be nested in a collection, use recursion to create the parent child relationships.
