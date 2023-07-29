@@ -16,7 +16,7 @@ social studies text set
 │   |       └──article 10
 ```
 
-The purpose of this project was to find for a piece of content, determine what text sets that content belongs to to measure engagement across text sets.
+The purpose of this project was to find for a piece of content, determine what text sets that content belongs to in order to measure engagement with text sets.
 
 # Approach
 Since there are not a fixed number of levels a piece of content can be nested in a text set, use recursion to create the parent child relationships.
