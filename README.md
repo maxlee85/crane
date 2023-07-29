@@ -3,6 +3,11 @@ Within our application a teacher can create, join and leave a classroom at anyti
 
 The purpose of this project was to create a table that provided the entire history of a teachers relationship with a classroom. So 1 row per teacher per classroom per start and end date.
 
+| user_id | classroom_id | classroom_start_date | classroom_end_date |
+|---------|--------------|----------------------|--------------------|
+| 1       | a            | 2021-01-01           | 2021-01-15         |
+| 1       | a            | 2021-08-01           | 2023-08-01         |
+
 # Approach
 The problem is a variation of the gaps and islands question so that is the approach used.
 
