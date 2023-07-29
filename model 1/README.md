@@ -62,3 +62,5 @@ If a teacher archives a classroom without leaving, that should be the classroom 
 |---------|--------------|------------------------------|----------------------------|
 | 1       | a            | 2022-01-01                   | 2022-01-02                 |
 | 1       | a            | 2022-01-16                   | 2022-06-01                 |
+
+This table is used downstream in reporting on teacher student relationships (which are determined by being in a classroom at the same time) as well as teacher school relationships (classrooms belong to schools).
