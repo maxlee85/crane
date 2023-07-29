@@ -56,6 +56,7 @@ In this table rows with overlapping date ranges are grouped together (date_group
 
 # teacher_classrooms
 Using the date_group calculated in teacher_classroom_groups, select the min teacher_classroom_start_date and max teacher_classroom_end_date grouped by the date_group to flatten the table.
+If a teacher archives a classroom without leaving, that should be the classroom end date, therefore another window function is applied to find the last_row_in_date_group to see if the classroom_archived_date needs to be used as the end date.
 
 | user_id | classroom_id | teacher_classroom_start_date | teacher_classroom_end_date |
 |---------|--------------|------------------------------|----------------------------|
