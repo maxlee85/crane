@@ -16,9 +16,8 @@ There are 3 staging tables used, which each subsequent staging table depending o
 teacher_classroom_date_ranges -> teacher_classroom_groups -> teacher_classrooms
 
 # teacher_classroom_date_ranges
-1. There have been multiple data ingestion tools used in the past leading inconsistent values across date columns and duplicate rows being generated.
-2. mysql_ebdb_tables.people_teacher_classrooms_history, a row is inserted into this table/updated everytime a teacher's relationship with a classroom changes. _fivetran_deleted represents a hard delete while datetime_archived would be a soft delete.\
-A basic recreation of the table
+1. The source table, mysql_ebdb_tables.people_teacher_classrooms_history, a row is inserted into this table/updated everytime a teacher's relationship with a classroom changes. _fivetran_deleted represents a hard delete while datetime_archived would be a soft delete.\
+A basic recreation of the table:
 
 | user_id | classroom_id | date_created | _fivetran_synced | _fivetran_deleted |
 |---------|--------------|--------------|------------------|-------------------|
@@ -27,9 +26,13 @@ A basic recreation of the table
 | 1       | a            | 2022-01-15   | 2022-01-16       |                   |
 | 1       | a            | 2022-01-15   | 2022-06-01       | true              |
 
-4. In the inferred_dates cte I am grabbing all potential date columns and generating an inferred created timestamp.
-5. In the classroom_dates cte I am creating an end date and ordering the rows into a inferred chronological order.
-6. Finally the query uses window functions to grab the delete and start and end dates of the previous row as well as filtering out rows of impossible or bad data.
+2. The issue is that there have been multiple data ingestion tools used in the past leading inconsistent values across date columns as well as duplicate rows being generated.
+
+
+
+5. In the inferred_dates cte I am grabbing all potential date columns and generating an inferred created timestamp.
+6. In the classroom_dates cte I am creating an end date and ordering the rows into a inferred chronological order.
+7. Finally the query uses window functions to grab the delete and start and end dates of the previous row as well as filtering out rows of impossible or bad data.
 
 | user_id | classroom_id | teacher_classroom_start_date | teacher_classroom_end_date | is_deleted | is_previous_row_deleted | previous_teacher_classroom_start_date | previous_teacher_classroom_end_date |
 |---------|--------------|------------------------------|----------------------------|------------|-------------------------|---------------------------------------|-------------------------------------|
