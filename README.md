@@ -16,7 +16,8 @@ There are 3 staging tables used, which each subsequent staging table depending o
 teacher_classroom_date_ranges -> teacher_classroom_groups -> teacher_classrooms
 
 # teacher_classroom_date_ranges
-1. The source table, mysql_ebdb_tables.people_teacher_classrooms_history, a row is inserted into this table/updated everytime a teacher's relationship with a classroom changes. _fivetran_deleted represents a hard delete while datetime_archived would be a soft delete.\
+1. In the "source" table, mysql_ebdb_tables.people_teacher_classrooms_history, a row is inserted into this table/updated everytime a teacher's relationship with a classroom changes. _fivetran_deleted represents a hard delete while datetime_archived would be a soft delete.\
+
 A basic recreation of the table:
 
 | user_id | classroom_id | date_created | _fivetran_synced | _fivetran_deleted |
